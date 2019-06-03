@@ -22,6 +22,18 @@ Node *Insert(Node *root, int value){
     return root;
 }
 
+int maxDepth(Node * root){
+  //  cout<<root->data<<endl;
+    if(root==NULL) return 0;
+    else{
+        int lDepth=maxDepth(root->left);
+        int rDepth=maxDepth(root->right);
+        
+        if(lDepth>rDepth) return lDepth+1;
+        else return rDepth+1;
+    }   
+}
+
 int main(){
     Node *root=NULL;
     root=Insert(root,5);
@@ -30,9 +42,13 @@ int main(){
     root=Insert(root,3);
     root=Insert(root,8);
     root=Insert(root,11);
-    cout<<root->right->left->data<<endl;
-    cout<<root->left->left->data<<endl;
-
+    root=Insert(root,33);
+    root=Insert(root,7);
+    root=Insert(root,6);
+    // cout<<root->right->left->data<<endl;
+    // cout<<root->left->left->data<<endl;
+    
+    cout<<maxDepth(root)<<endl;
     /*
     the output is : 8  3
         5
@@ -40,12 +56,14 @@ int main(){
       4   10
      /   /  \
    3   8     11
+               \
+                33
 
     Rules to form a Binary tree :
     1. Base Case:
           if the root is null then a node is created with insert its value and left and 
           right child become null again.
-    2.  If the incoming value is lesser or equal than it's root then it's going to the left
+    2. If the incoming value is lesser or equal than it's root then it's going to the left
     3. Otherwise going to the right. 
     */
     
