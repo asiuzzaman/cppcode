@@ -20,13 +20,13 @@ int main()
     adj[v].push_back({u, w});
   }
  
-  priority_queue<pair<int, int> > pq;
+  queue<pair<int, int> > pq;
   pq.push({0, 0}); // 1st element 0 is the weight of 0 vertics
   dist[0] = 0;
 
   while (!pq.empty())
   {
-    int u = pq.top().second;
+    int u = pq.front().second;
     pq.pop();
 
     for (int i = 0; i < adj[u].size(); i++)
