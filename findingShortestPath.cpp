@@ -20,7 +20,7 @@ int main()
     adj[v].push_back({u, w});
   }
  
-  priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+  priority_queue<pair<int, int> > pq;
   pq.push({0, 0}); // 1st element 0 is the weight of 0 vertics
   dist[0] = 0;
 
