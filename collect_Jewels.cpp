@@ -35,7 +35,7 @@ void SavePath(){
         }
     }
 }
-int Travel(int i,int j,int total){
+void Travel(int i,int j,int total){
     
     Path[i][j]=5;
     Visited[i][j]=1;
@@ -46,7 +46,7 @@ int Travel(int i,int j,int total){
             SavePath();
         }
         Visited[i][j]=0;
-        return 1;
+        return ;
     }
     //cout<<Visited[i][j+1]<<endl;
     if((j+1)< N){
@@ -108,7 +108,7 @@ int Travel(int i,int j,int total){
     }
     Visited[i][j]=0;
    // PrintGrid(Path);
-   return -1;
+  // return -1;
 }
 int main(){
     int t;
@@ -143,6 +143,8 @@ int main(){
 }
 
 /*
+
+1
 
 6
 0 1 2 1 0 0
