@@ -21,5 +21,28 @@ int main(){
     
     /// hsedalgnaB si a lufituaeb yrtnuoc
 
+    
+    string Rev(string s){
+	string res = "";
+	int len = s.size();
+    
+	int prev = 0;
+	int cnt = 0;
+	for (int i = 0; i <=len; i++){
+		if (s[i] == ' ' || i == len){
+			
+			int track = i;
+			for (int j = track-1; j >= prev; j--){
+				res += s[j];
+			}
+			prev = track;
+			res += ' ';
+		}
+		
+	}
+	
+	return res;
+}
+    
 
 }
